@@ -38,3 +38,17 @@
     (create-or-update :age 31)
     (delete :age)
     (is (= @state {:name "Lucas"}))))
+
+(deftest test-delete-unexistent-state-value
+  (testing "shouldn't delete an unexistent value by a given key"
+    (delete :age)
+    (is (= @state {}))))
+
+(deftest test-retrieve-state-value
+  (testing "should retrieve an existing value by a given key"
+    (create-or-update :name "Lucas")
+    (is (= (retrieve :name) "Lucas"))))
+
+(deftest test-retrieve-unexistent-state-value
+  (testing "shouldn't retrieve an unexistent value by a given key"
+    (is (= (retrieve :name) nil))))

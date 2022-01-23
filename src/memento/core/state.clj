@@ -11,3 +11,7 @@
   [key]
   (swap! state dissoc key)
   state)
+
+(defn retrieve
+  [key]
+  (key @state))
