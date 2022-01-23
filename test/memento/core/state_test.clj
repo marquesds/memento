@@ -3,9 +3,9 @@
             [memento.core.state :refer :all]))
 
 (defn reset-state
-  [test-fn]
+  [fn]
   (reset! state {})
-  test-fn)
+  (fn))
 
 (use-fixtures :each reset-state)
 
@@ -37,4 +37,4 @@
     (create-or-update :name "Lucas")
     (create-or-update :age 31)
     (delete :age)
-    (is (= @state {:name "José"}))))
+    (is (= @state {:name "Lucas"}))))
