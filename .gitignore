@@ -1,0 +1,10 @@
+/target
+.lein-*
+.idea
+.DS_Store
+.nrepl-*
+.code
+.nrepl-port
+.calva/
+.clj-kondo/
+.lsp/
