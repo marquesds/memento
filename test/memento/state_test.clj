@@ -1,6 +1,6 @@
-(ns memento.core.state-test
+(ns memento.state-test
   (:require [clojure.test :refer :all]
-            [memento.core.state :refer :all]))
+            [memento.state :refer :all]))
 
 (defn reset-state
   [fn]

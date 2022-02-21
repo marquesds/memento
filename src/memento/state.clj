@@ -1,4 +1,4 @@
-(ns memento.core.state)
+(ns memento.state)
 
 (def state (atom {}))
 
