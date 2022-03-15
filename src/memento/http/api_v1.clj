@@ -1,5 +1,6 @@
 (ns memento.http.api-v1
-  (:require [memento.service :refer :all]
+  (:require [clojure.data.json :as json]
+            [memento.service :refer :all]
             [compojure.core :refer :all]
             [compojure.route :as route]))
 
@@ -14,12 +15,13 @@
     [key]
     {:headers headers}
     {:status 200 :body (get-value key)})
-  (POST "/api/v1/state/"
+  (POST "/api/v1/state"
     {body :body}
     {:headers headers}
     (set-state body)
+    ;; (set-state (json/read-json (slurp body)))
     {:status 201})
-  (PUT "/api/v1/state/"
+  (PUT "/api/v1/state"
     {body :body}
     {:headers headers}
     (set-state body)

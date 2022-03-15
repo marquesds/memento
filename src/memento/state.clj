@@ -1,17 +1,15 @@
 (ns memento.state)
 
-(def state (atom {}))
-
 (defn create-or-update
-  [key value]
+  [state key value]
   (swap! state assoc key value)
   state)
 
 (defn delete
-  [key]
+  [state key]
   (swap! state dissoc key)
   state)
 
 (defn retrieve
-  [key]
+  [state key]
   (key @state))

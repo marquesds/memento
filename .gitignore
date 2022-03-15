@@ -8,3 +8,5 @@
 .calva/
 .clj-kondo/
 .lsp/
+journal4*
+pom.xml
